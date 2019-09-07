@@ -3,7 +3,9 @@ package com.example.matematicamente.login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,6 +13,7 @@ import android.text.TextWatcher;
 import android.view.View;
 
 import com.example.matematicamente.R;
+import com.example.matematicamente.home.HomeActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -31,19 +34,19 @@ public class LoginActivity extends AppCompatActivity {
         button.setEnabled(false);
         nameInput.addTextChangedListener(createInputValidator());
         ageInput.addTextChangedListener(createInputValidator());
+    }
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ApplySharedPref")
-            @Override
-            public void onClick(View view) {
-                SharedPreferences pref = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putString(getString(R.string.name_input_text), getText(nameInput));
-                Editable age = ageInput.getText();
-                editor.putString(getString(R.string.age_input_text), getText(ageInput));
-                editor.commit();
-            }
-        });
+    @SuppressLint("ApplySharedPref")
+    public void onLogInClick(View view) {
+        SharedPreferences pref = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(getString(R.string.name_input_text), getText(nameInput));
+        Editable age = ageInput.getText();
+        editor.putString(getString(R.string.age_input_text), getText(ageInput));
+        editor.commit();
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     private String getText(TextInputEditText input) {
@@ -69,4 +72,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
     }
+
 }

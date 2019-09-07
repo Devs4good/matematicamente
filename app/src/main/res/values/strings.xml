@@ -9,4 +9,9 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="home_title">Elegi una actividad</string>
+    <string name="curiosity_option_title">Curiosidades</string>
+    <string name="graphics_option_title">Graficos</string>
+    <string name="contact_option_title">Comentarios</string>
+    <string name="trivia_option_title">Proporciones</string>
 </resources>

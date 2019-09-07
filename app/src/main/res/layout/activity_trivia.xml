@@ -1,16 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".curiosities.CuriositiesActivity">
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".trivia.TriviaActivity">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:id="@+id/trivia_formulation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TRIVIA"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="340dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:gravity="center"
+        style="@style/TriviaFormulation"
+        android:text="Si comprás 3 kg de pan a $270"
+    />
+
+    <TextView
+        android:id="@+id/trivia_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/TriviaQuestion"
+        android:layout_marginBottom="60dp"
+        android:textColor="#707070"
+        android:text="¿Cuántos kg compro con $630?"
+    />
+
+
+    <LinearLayout
+        android:id="@+id/input_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+
+        <Button
+            android:id="@+id/option_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TriviaOptionButton"
+            tools:text="Round Corner Button"
+        />
+
+        <Button
+            android:id="@+id/option_b"
+            style="@style/TriviaOptionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Round Corner Button"
+        />
+
+        <Button
+            android:id="@+id/option_c"
+            style="@style/TriviaOptionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Round Corner Button"
+        />
+
+        <Button
+            android:id="@+id/option_d"
+            style="@style/TriviaOptionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Round Corner Button"
+        />
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

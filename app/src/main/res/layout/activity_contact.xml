@@ -17,25 +17,28 @@
             android:id="@+id/textView3"
             android:layout_width="325dp"
             android:layout_height="85dp"
-            android:text="Dejanos tu opinion para seguir mejorando la app"
+            android:text="@string/contact_title"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/contactText"
             style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense"
             android:layout_width="320dp"
             android:layout_height="213dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine" />
+            android:hint="@string/contact_form_hint_text"
+            android:inputType="textMultiLine"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enviar Comentario" />
+            android:onClick="onSendClick"
+            android:text="@string/send_contact_btn_text" />
 
     </LinearLayout>
 

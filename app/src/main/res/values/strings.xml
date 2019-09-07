@@ -9,4 +9,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="contact_title">Dejanos tu opinion para seguir mejorando la app</string>
+    <string name="send_contact_btn_text">Enviar Comentario</string>
+    <string name="contact_form_hint_text">Escribi tu comentario</string>
 </resources>

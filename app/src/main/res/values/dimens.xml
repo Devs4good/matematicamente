@@ -7,4 +7,8 @@
     <dimen name="logo_top_margin">40dp</dimen>
     <dimen name="login_button_padding">16dp</dimen>
     <dimen name="login_button_text_size">18sp</dimen>
+    <dimen name="trivia_option_horizontal_margin">32dp</dimen>
+    <dimen name="trivia_option_vertical_margin">40dp</dimen>
+    <dimen name="trivia_title">28dp</dimen>
+    <dimen name="trivia_text">20dp</dimen>
 </resources>

@@ -22,4 +22,32 @@
         <item name="backgroundTint">@color/colorPrimary</item>
     </style>
 
+    <style name="TriviaOptionButton">
+        <item name="android:layout_marginBottom">30dp</item>
+        <item name="android:layout_marginStart">@dimen/trivia_option_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/trivia_option_horizontal_margin</item>
+        <item name="android:padding">24dp</item>
+        <item name="android:textSize">@dimen/login_button_text_size</item>
+        <item name="android:background">@drawable/btn_rounded_corner_outline</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TriviaQuestion">
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginStart">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/activity_horizontal_margin</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/trivia_title</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="TriviaFormulation">
+        <item name="android:layout_marginStart">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/activity_horizontal_margin</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/trivia_text</item>
+    </style>
+
 </resources>

@@ -1,0 +1,23 @@
+{
+  "trivia": [
+    {
+      "question": "Cuánto es 1 + 1?",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "7"
+      ],
+      "answer": "2"
+    }, {
+      "question": "Cuánto es 2 + 4?",
+      "options": [
+        "1",
+        "4",
+        "6",
+        "7"
+      ],
+      "answer": "6"
+    }
+  ]
+}

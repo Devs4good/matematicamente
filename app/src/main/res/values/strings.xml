@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Matemáticamente</string>
+    <string name="contact_title">Dejanos tu opinion para seguir mejorando la app</string>
+    <string name="send_contact_btn_text">Enviar Comentario</string>
+    <string name="contact_form_hint_text">Escribi tu comentario</string>
     <string name="home_title">Elegi una actividad</string>
     <string name="curiosity_option_title">Curiosidades</string>
     <string name="graphics_option_title">Graficos</string>

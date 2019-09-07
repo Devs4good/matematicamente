@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +24,6 @@ public class SplashActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         final Activity activity = this;
         new Timer().schedule(
                 new TimerTask() {
@@ -34,7 +35,7 @@ public class SplashActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 },
-                2000
+                DELAY
         );
     }
 }

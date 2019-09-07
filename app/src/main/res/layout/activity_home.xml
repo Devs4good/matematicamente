@@ -1,115 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background_perfil"
-    android:orientation="vertical"
     tools:context=".home.HomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/home_vertical_margin"
-        android:layout_marginLeft="@dimen/home_hor_margin"
-        android:layout_marginRight="@dimen/home_hor_margin"
-        android:layout_marginBottom="@dimen/home_vertical_margin"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/home_title_text_size"
-            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_height="58dp"
+            android:textSize="@dimen/category_title"
             android:gravity="center"
-            android:text="@string/home_title"
-            android:textSize="@dimen/category_title" />
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:text="@string/home_title" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:background="@drawable/home_background">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onCuriositiesClick"
+                android:text="@string/curiosity_option_title" />
 
-                <Button
-                    android:id="@+id/graphics_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawablePadding="@dimen/home_button_text_padding"
-                    android:drawableTop="@drawable/ic_icon_graphics"
-                    android:onClick="onGraphicClick"
-                    android:text="@string/graphics_option_title"
-                    android:textColor="@color/colorSecondary"
-                    android:textSize="@dimen/home_icon_text_size"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.242"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.501" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onGraphicClick"
+                android:text="@string/graphics_option_title" />
 
-                <Button
-                    android:id="@+id/trivia_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawablePadding="@dimen/home_button_text_padding"
-                    android:drawableTop="@drawable/ic_icon_trivia"
-                    android:onClick="onTriviaClick"
-                    android:text="@string/trivia_option_title"
-                    android:textColor="@color/colorSecondary"
-                    android:textSize="@dimen/home_icon_text_size"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.56"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.154" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onTriviaClick"
+                android:text="@string/trivia_option_title" />
 
-                <Button
-                    android:id="@+id/curiosities_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawablePadding="@dimen/home_button_text_padding"
-                    android:drawableTop="@drawable/ic_icon_curiosities"
-                    android:onClick="onCuriositiesClick"
-                    android:text="@string/curiosity_option_title"
-                    android:textColor="@color/colorSecondary"
-                    android:textSize="@dimen/home_icon_text_size"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.794"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/contact_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawablePadding="@dimen/home_button_text_padding"
-                    android:drawableTop="@drawable/ic_icon_contact"
-                    android:onClick="onContactClick"
-                    android:text="@string/contact_option_title"
-                    android:textColor="@color/colorSecondary"
-                    android:textSize="@dimen/home_icon_text_size"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.56"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.9" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </RelativeLayout>
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onContactClick"
+                android:text="@string/contact_option_title" />
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

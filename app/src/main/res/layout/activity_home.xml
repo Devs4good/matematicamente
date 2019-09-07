@@ -15,10 +15,10 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:textSize="32dp"
+            android:textSize="@dimen/category_title"
             android:gravity="center"
             android:layout_margin="@dimen/activity_vertical_margin"
-            android:text="ELEGI UNA ACTIVIDAD" />
+            android:text="@string/home_title" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,28 +31,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onCuriositiesClick"
-                android:text="Curiosidades" />
+                android:text="@string/curiosity_option_title" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onGraphicClick"
-                android:text="Graficos" />
+                android:text="@string/graphics_option_title" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onTriviaClick"
-                android:text="Proporciones" />
+                android:text="@string/trivia_option_title" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onContactClick"
-                android:text="Comentarios" />
+                android:text="@string/contact_option_title" />
         </LinearLayout>
 
     </LinearLayout>

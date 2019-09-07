@@ -12,13 +12,14 @@
         <activity android:name=".graphics.GraphicsActivity" />
         <activity android:name=".contact.ContactActivity" />
         <activity android:name=".trivia.TriviaActivity" />
-        <activity android:name=".login.LoginActivity">
+        <activity android:name=".login.LoginActivity" />
+        <activity
+            android:name=".splash.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

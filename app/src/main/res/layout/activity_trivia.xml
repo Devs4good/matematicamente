@@ -1,16 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".curiosities.CuriositiesActivity">
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".trivia.TriviaActivity"
+>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TRIVIA"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="340dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="150dp"
+            >
+            <TextView
+                android:id="@+id/question_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/circle"
+                app:layout_constraintBottom_toBottomOf="@id/circle"
+                app:layout_constraintStart_toStartOf="@id/circle"
+                app:layout_constraintEnd_toEndOf="@id/circle"
+                android:text="1/10"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+            />
+            <ImageView
+                android:id="@+id/circle"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:foregroundGravity="center"
+                android:src="@drawable/circle_outline"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/trivia_formulation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/TriviaFormulation"
+            android:text="Si comprás 3 kg de pan a $270"
+        />
+
+        <TextView
+            android:id="@+id/trivia_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/TriviaQuestion"
+            android:layout_marginBottom="60dp"
+            android:textColor="#707070"
+            android:text="¿Cuántos kg compro con $630?"
+        />
+
+
+        <LinearLayout
+            android:id="@+id/input_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+            <Button
+                android:id="@+id/option_a"
+                style="@style/TriviaOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Round Corner Button"
+                android:onClick="validateAnswer"
+            />
+
+            <Button
+                android:id="@+id/option_b"
+                style="@style/TriviaOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Round Corner Button"
+                android:onClick="validateAnswer"
+            />
+
+            <Button
+                android:id="@+id/option_c"
+                style="@style/TriviaOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round Corner Button"
+                android:onClick="validateAnswer"
+            />
+
+            <Button
+                android:id="@+id/option_d"
+                style="@style/TriviaOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="validateAnswer"
+                android:text="Round Corner Button"
+                android:gravity="center"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/show_explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver explicación"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:layout_marginRight="@dimen/trivia_text_horizontal_margin"
+            android:layout_marginLeft="@dimen/trivia_text_horizontal_margin"
+            android:visibility="gone"
+            android:onClick="showExplanation"
+            />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginBottom="15dp"
+            android:textAlignment="textStart"
+            android:layout_marginRight="@dimen/trivia_text_horizontal_margin"
+            android:layout_marginLeft="@dimen/trivia_text_horizontal_margin"
+            android:textColor="#707070"
+            android:visibility="gone"
+        />
+        <TextView
+            android:id="@+id/explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:lineHeight="24dp"
+            android:textAlignment="textStart"
+            android:layout_marginRight="@dimen/trivia_text_horizontal_margin"
+            android:layout_marginLeft="@dimen/trivia_text_horizontal_margin"
+            android:visibility="gone"
+        />
+
+        <Button
+            android:id="@+id/next_question"
+            style="@style/TriviaNextQuestionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGUIENTE PREGUNTA"
+            android:onClick="getNextQuestion"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+
+
+</ScrollView>

@@ -125,7 +125,7 @@ public class GraphicsActivity extends AppCompatActivity {
             case MotionEvent.ACTION_UP:
                 Pair<Double, Double> touchCoordinates = invisibleSeries.getPointForLocation(xPosition, yPosition);
                 if (touchCoordinates == null) {
-                    Toast.makeText(this, "No point, try again.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Intentá de nuevo", Toast.LENGTH_SHORT).show();
                     break;
                 }
                 DataPoint dataPoint = new DataPoint(touchCoordinates.first, touchCoordinates.second);
@@ -144,10 +144,10 @@ public class GraphicsActivity extends AppCompatActivity {
                             if (hasFinished()) {
                                 succeededGame();
                             } else {
-                                Toast.makeText(this, "Correcto!!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(this, "Correcto!!", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(this, "Wrong point, try again.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Intentá de nuevo", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }

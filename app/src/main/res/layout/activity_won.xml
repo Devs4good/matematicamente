@@ -2,35 +2,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
     android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/winning_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:gravity="center"
-        android:text="Ganaste!"
+        android:text="¡Ganaste!"
         android:textColor="#FFFFFF"
-        android:textSize="80dp" />
+        android:textSize="50sp" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/trophy"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_margin="16dp"
+        android:layout_weight="1"
         android:padding="20dp"
+        android:scaleType="fitCenter"
         app:srcCompat="@drawable/ic_icon_gane" />
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:text="Excelente\nAhora podés manejar un barco...\nBueno, tal vez no, peeeero aprendiste que"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/explanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:text="Los puertos por los que te moviste muestran la manera en que se representan los puntos en un eje cartesiano.\n\nEsos son los pares ordenados"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/conclusion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:text="(X;Y)"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
 
     <Button
         android:id="@+id/backToMenuBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="0"
         android:background="#5E51A3"
-        android:minHeight="48dp"
         android:onClick="onBackClick"
         android:text="Volver al menu"
         android:textColor="#FFFFFF" />

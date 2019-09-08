@@ -1,23 +1,38 @@
 {
   "trivia": [
     {
-      "question": "Cuánto es 1 + 1?",
+      "formulation": "Si comprás 3 kg de pan a $270",
+      "question": "¿Cuántos kg compro con $630?",
       "options": [
-        "2",
-        "3",
-        "5",
-        "7"
+        "5 kg",
+        "6 kg",
+        "7 kg",
+        "8 kg"
       ],
-      "answer": "2"
+      "answer": "7 kg",
+      "explanation": "Planteamos la regla de 3 simple\n3kg de pan——————— 270\n        X.        ———————  630 \nMultiplicamos (630x3)/270\nEsto se debe a que la relación de kg por precio es constante. Entonces\n3 kg.    X\n——= ——\n270.    630\n\nSe despeja la x y llega a 630 • 3\n                                          ————\n                                              270\nX= 7\n"
     }, {
-      "question": "Cuánto es 2 + 4?",
+      "formulation": "Tenes 2 horas y media de viaje. Elegiste una playlist en donde cada canción dura 3 minutos, sin anuncios.",
+      "question": "¿Cuántas canciones podrás escuchar? ",
       "options": [
-        "1",
-        "4",
-        "6",
-        "7"
+        "50 canciones",
+        "27 canciones",
+        "39 canciones",
+        "52 canciones"
       ],
-      "answer": "6"
+      "answer": "50 canciones",
+      "explanation": "3min—— 1 cancion\n150 min— x\n\n(150•1)/3=x\nEsto se debe a que la relacion de la canción por minuto es constante. Entonces\n1/3 min= x/150 min\n(150•1)/3= 50 canciones\nX= 50 canciones \n"
+    }, {
+      "formulation": "Supongamos que podes ver 3 capitulos de tu serie favorita en una hora.",
+      "question": "¿Cuántos capitulos podrías ver en 3 horas y media?",
+      "options": [
+        "8",
+        "10 y medio",
+        "9 y medio",
+        "11"
+      ],
+      "answer": "10 y medio",
+      "explanation": "Planteamos la regla de tres simple, teniendo en cuenta que 1 hora=60 minutos\n60 minutos———— 3 capitulos\n210 minutos ———- x\nEsto se debe a que la relación de capitulos por hora es constante. Entonces\n3 cap/ 60 = x/210 min\nDespejemos la x \n3/60 • 210 = x\nX= 10 capitulos y medio \nX= 10,5\n"
     }
   ]
 }

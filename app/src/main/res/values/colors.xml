@@ -5,4 +5,6 @@
     <color name="colorSecondary">#FA9B3B</color>
     <color name="colorAccent">#ECC480</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorRightAnswer">#32BA7C</color>
+    <color name="colorWrongAnswer">#D75A4A</color>
 </resources>

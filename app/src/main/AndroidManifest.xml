@@ -8,6 +8,7 @@
         android:theme="@style/AppTheme"
         android:icon="@drawable/ic_logo_violeta"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".WonActivity"></activity>
         <activity android:name=".curiosities.CuriositiesActivity" />
         <activity android:name=".home.HomeActivity" />
         <activity android:name=".graphics.GraphicsActivity" />
@@ -19,8 +20,14 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

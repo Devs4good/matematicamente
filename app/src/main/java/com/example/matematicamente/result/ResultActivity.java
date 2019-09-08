@@ -21,7 +21,7 @@ public class ResultActivity extends AppCompatActivity {
 
     protected void updateResult(){
         TextView result = findViewById(R.id.result);
-        result.setText("Respondiste " + getIntent().getExtras().getInt("result") + "/" + getIntent().getExtras().getInt("qty") + "preguntas correctas");
+        result.setText("Respondiste " + getIntent().getExtras().getInt("result") + "/" + getIntent().getExtras().getInt("qty") + " preguntas correctas");
     }
 
     public void goBackHome(View view) {

@@ -61,7 +61,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="409dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:orientation="vertical">
@@ -78,16 +78,16 @@
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:color="#707070"
                 android:autoLink="web"
+                android:color="#707070"
                 android:text="https://ekuatio.com/matematicas-y-arte-que-tienen-en-comun/" />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:color="#707070"
                 android:autoLink="web"
+                android:color="#707070"
                 android:text="https://www.bbc.com/mundo/especial/vert_cul/2016/03/160317_vert_matematica_en_obras_de_arte_yv" />
         </LinearLayout>
 
@@ -109,32 +109,32 @@
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:color="#707070"
                 android:autoLink="web"
+                android:color="#707070"
                 android:text="https://es.wikipedia.org/wiki/Cocina_solar" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:color="#707070"
                 android:autoLink="web"
+                android:color="#707070"
                 android:text="https://youtu.be/CZpRhyR0MyQ" />
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:color="#707070"
                 android:autoLink="web"
+                android:color="#707070"
                 android:text="https://youtu.be/rJkdjL21Tqs" />
 
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:color="#707070"
                 android:autoLink="web"
+                android:color="#707070"
                 android:text="https://youtu.be/2TLB5TdSwBA" />
 
         </LinearLayout>

@@ -1,24 +1,21 @@
 package com.example.matematicamente.graphics;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.graphics.Color;
 import android.util.Log;
 import android.util.Pair;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.matematicamente.R;
 import com.example.matematicamente.WonActivity;
-import com.example.matematicamente.home.HomeActivity;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -27,15 +24,17 @@ import com.jjoe64.graphview.series.PointsGraphSeries;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GraphicsActivity extends AppCompatActivity {
 
-    private View map;
     private View cursorView;
+    private ListView pointListView;
+    private GraphView graph;
 
-    GraphView graph;
     MyGraphSeries<DataPoint> invisibleSeries;
     MyGraphSeries<DataPoint> originSeries;
     LineGraphSeries<DataPoint> lineSeries;
@@ -44,7 +43,7 @@ public class GraphicsActivity extends AppCompatActivity {
     DataPoint[] points;
     TextView pointsView;
     int score = 0;
-    private ListView pointList;
+    ArrayAdapter<String> itemsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +51,11 @@ public class GraphicsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_graphics);
         cursorView = findViewById(R.id.cursor);
         graph = findViewById(R.id.graph);
-        pointList = (ListView) findViewById(R.id.pointList);
-        pointsView = (TextView) findViewById(R.id.pointsText);
+        pointListView = findViewById(R.id.pointList);
+        pointsView = findViewById(R.id.pointsText);
         setUpPoints();
         setUpGraph();
         setUpSeries();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-//        setUpCursor();
     }
 
     private void setUpPoints() {
@@ -77,13 +70,12 @@ public class GraphicsActivity extends AppCompatActivity {
         List<String> pointsArr = new ArrayList<>();
         for (int i = 0; i < points.length; i++) {
             DataPoint p = points[i];
-            int x = (int)p.getX();
-            int y = (int)p.getY();
+            int x = (int) p.getX();
+            int y = (int) p.getY();
             pointsArr.add(String.format("Puerto %d: X=%d Y=%d", (i + 1), x, y));
         }
-        ArrayAdapter<String> itemsAdapter =
-                new ArrayAdapter<String>(this, R.layout.simple_list_item, pointsArr);
-        pointList.setAdapter(itemsAdapter);
+        itemsAdapter = new ArrayAdapter<>(this, R.layout.simple_list_item, pointsArr);
+        pointListView.setAdapter(itemsAdapter);
     }
 
     private boolean hasFinished() {
@@ -91,7 +83,6 @@ public class GraphicsActivity extends AppCompatActivity {
     }
 
     private void setUpGraph() {
-        //graph.setTitle(getString(R.string.graphics_option_title));
         graph.setTitleTextSize(32);
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getViewport().setYAxisBoundsManual(true);
@@ -113,7 +104,6 @@ public class GraphicsActivity extends AppCompatActivity {
         lineSeries = new LineGraphSeries<>();
         graph.addSeries(lineSeries);
     }
-
 
     public boolean dispatchTouchEvent(MotionEvent event) {
         int index = event.getActionIndex();
@@ -148,7 +138,7 @@ public class GraphicsActivity extends AppCompatActivity {
 
                             updateScore(score + 1);
                             lastCorrectMove = i;
-                            updatePointList(Arrays.copyOfRange(points, lastCorrectMove + 1, points.length), lastCorrectMove + 1);
+                            updatePointListRemoving(lastCorrectMove);
                             showCorrectLineTo(dataPoint);
                             moveCursorCoordinate(xPosition, yPosition);
                             if (hasFinished()) {
@@ -168,17 +158,11 @@ public class GraphicsActivity extends AppCompatActivity {
         return true;
     }
 
-    private void updatePointList(DataPoint[] pointsArr, int startIndex) {
-        List<String> pointArrayList = new ArrayList<>();
-        for (int i = 0; i < pointsArr.length; i++) {
-            DataPoint p = pointsArr[i];
-            int x = (int)p.getX();
-            int y = (int)p.getY();
-            pointArrayList.add(String.format("Puerto %d: X=%d Y=%d", (i + startIndex + 1), x, y));
-        }
-        ArrayAdapter<String> itemsAdapter =
-                new ArrayAdapter<>(this, R.layout.simple_list_item, pointArrayList);
-        pointList.setAdapter(itemsAdapter);
+    private void updatePointListRemoving(int index) {
+        int x = (int) points[index].getX();
+        int y = (int) points[index].getY();
+        String listItem = String.format("Puerto %d: X=%d Y=%d", (index + 1), x, y);
+        itemsAdapter.remove(listItem);
     }
 
 
@@ -186,10 +170,11 @@ public class GraphicsActivity extends AppCompatActivity {
         score = newScore;
         pointsView.setText(Integer.toString(score));
     }
+
     private void moveCursorCoordinate(float X, float Y) {
         int mDuration = 1000;
-        float previousX = cursorView.getX();
-        float previousY = cursorView.getY();
+        float previousX = getCursorX();
+        float previousY = getCursorY();
         ValueAnimator vaX = ValueAnimator.ofFloat(previousX, X);
         vaX.setDuration(mDuration);
         vaX.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -216,14 +201,28 @@ public class GraphicsActivity extends AppCompatActivity {
         cursorView.setY(y - cursorView.getHeight() / 2f);
     }
 
+    private float getCursorX() {
+        return cursorView.getX() + cursorView.getWidth() / 2f;
+    }
+
+    private float getCursorY() {
+        return cursorView.getY() + cursorView.getHeight() / 2f;
+    }
+
     private void showCorrectLineTo(DataPoint point) {
         lineSeries.appendData(point, false, points.length);
         pointSeries.appendData(point, false, points.length);
     }
 
     private void succeededGame() {
-        Intent intent = new Intent(this, WonActivity.class);
-        startActivity(intent);
+        final Context context = this;
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(context, WonActivity.class);
+                startActivity(intent);
+            }
+        }, 750);
     }
 
 }

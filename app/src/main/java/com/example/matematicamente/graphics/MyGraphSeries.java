@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class MyGraphSeries<E extends DataPointInterface> extends PointsGraphSeries {
 
-    final float TOLERANCE = 20f;
+    final float TOLERANCE = 50f;
     private Map<Pair<Double, Double>, Pair<Float, Float>> logicPointsToRealPoints = new HashMap<>();
     private Map<Pair<Float, Float>, Pair<Double, Double>> realPointsToLogicPoints = new HashMap<>();
 

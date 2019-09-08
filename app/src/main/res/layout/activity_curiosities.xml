@@ -19,9 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:gravity="center"
-            android:text="Curiosidades"
+            android:text="@string/curiosities_title"
             android:textColor="#FFFFFF"
-            android:textSize="24dp" />
+            android:textSize="@dimen/curiosity_title_size" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,9 +33,9 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Musica"
+                android:text="@string/music_section_title"
                 android:textColor="#FFFFFF"
-                android:textSize="16dp" />
+                android:textSize="@dimen/section_size" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="Arte"
                 android:textColor="#FFFFFF"
-                android:textSize="16dp" />
+                android:textSize="@dimen/section_size" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="Otros"
                 android:textColor="#FFFFFF"
-                android:textSize="16dp" />
+                android:textSize="@dimen/section_size" />
 
             <TextView
                 android:id="@+id/textView15"

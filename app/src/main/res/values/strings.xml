@@ -11,4 +11,6 @@
     <string name="login_button_text">Ingresar</string>
     <string name="name_input_text">Nombre</string>
     <string name="age_input_text">Edad</string>
+    <string name="curiosities_title">Curiosidades</string>
+    <string name="music_section_title">Musica</string>
 </resources>

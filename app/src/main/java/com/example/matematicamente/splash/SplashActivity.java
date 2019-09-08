@@ -32,6 +32,7 @@ public class SplashActivity extends AppCompatActivity {
                         SharedPreferences prefs = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
                         String name = prefs.getString(getString(R.string.name_input_text), "");
                         Intent intent = new Intent(activity, name.isEmpty() ? LoginActivity.class : HomeActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }
                 },

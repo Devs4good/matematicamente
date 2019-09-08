@@ -1,6 +1,7 @@
 package com.example.matematicamente.graphics;
 
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.matematicamente.R;
+import com.example.matematicamente.WonActivity;
+import com.example.matematicamente.home.HomeActivity;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -142,7 +145,7 @@ public class GraphicsActivity extends AppCompatActivity {
                         // currentPoint is the Point tapped on
                         if (i == lastCorrectMove + 1) {
                             // currentPoint is the correct point to tap
-                            Toast.makeText(this, "Correct!!", Toast.LENGTH_LONG).show();
+
                             updateScore(score + 1);
                             lastCorrectMove = i;
                             updatePointList(Arrays.copyOfRange(points, lastCorrectMove + 1, points.length), lastCorrectMove + 1);
@@ -150,6 +153,8 @@ public class GraphicsActivity extends AppCompatActivity {
                             moveCursorCoordinate(xPosition, yPosition);
                             if (hasFinished()) {
                                 succeededGame();
+                            } else {
+                                Toast.makeText(this, "Correcto!!", Toast.LENGTH_LONG).show();
                             }
                         } else {
                             Toast.makeText(this, "Wrong point, try again.", Toast.LENGTH_SHORT).show();
@@ -217,7 +222,8 @@ public class GraphicsActivity extends AppCompatActivity {
     }
 
     private void succeededGame() {
-        Toast.makeText(this, "YOU WON!!!!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, WonActivity.class);
+        startActivity(intent);
     }
 
 }
